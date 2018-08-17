@@ -1,12 +1,64 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
+
+func CelciustoFehrenheit() {
+
+	var input int
+	var result int
+
+	fmt.Println("*************You choose to convert from Celcius to Fehrenheit*************")
+	fmt.Println("Enter the degree in Celcius :")
+
+	_, err := fmt.Scan(&input)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(input, "Celcius")
+	result = input*9/5 + 32
+	fmt.Println(input, "Celcius = ", result, " Fehrenheit")
+}
+
+//--------------------------------------------------------------------------------------------------------------------
+func FehrenheittoCelcius() {
+
+	var input int
+	var result int
+
+	fmt.Println("*************You choose to convert from Fehrenheit to Celcius*************")
+	fmt.Println("Enter the degree in Fehrenheit :")
+
+	_, err := fmt.Scan(&input)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(input, "Fehrenheit")
+	result = (input - 32) * 5 / 9
+	fmt.Println(input, "Fehrenheit = ", result, " Celcius")
+}
+
+//--------------------------------------------------------------------------------------------------------------------
 
 func main() {
-	var x float64
-	fmt.Println("1- Convert 'Celcius to Fehrenheit'")
-	fmt.Println("2- Convert 'Fehrenheit to Celcius'")
-	fmt.Println("Make your choise 1 or 2 :")
-	fmt.Scanf("%f", &x)
-	fmt.Println(x)
+	var x int
+	//var input float64
+
+	fmt.Println("1- Convert 'Celcius to Fehrenheit")
+	fmt.Println("2- Convert 'Fehrenheit to Celcius")
+	fmt.Print("Make your choise 1 or 2 :")
+	fmt.Scanf("%d", &x)
+
+	switch x {
+	case 1:
+		CelciustoFehrenheit()
+		break
+
+	case 2:
+		FehrenheittoCelcius()
+		break
+	}
 }
