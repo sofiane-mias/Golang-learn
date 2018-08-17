@@ -1,0 +1,12 @@
+package main
+
+import "fmt"
+
+func main() {
+	var x float64
+	fmt.Println("1- Convert 'Celcius to Fehrenheit'")
+	fmt.Println("2- Convert 'Fehrenheit to Celcius'")
+	fmt.Println("Make your choise 1 or 2 :")
+	fmt.Scanf("%f", &x)
+	fmt.Println(x)
+}
